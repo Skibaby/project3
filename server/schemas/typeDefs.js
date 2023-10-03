@@ -25,7 +25,10 @@ const typeDefs = `#graphql
     user(id: ID!): User
     me: User
     getTodos(userId: ID!): [Todo]
+    getTodo(_id: ID!): Todo
   }
+
+  
 
   
 

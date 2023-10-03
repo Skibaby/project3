@@ -29,3 +29,27 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const GET_TODOS = gql`
+query GetTodos($userId: ID!) {
+  getTodos(userId: $userId) {
+    title
+    todotask
+    completedOn
+    _id
+    userId
+  }
+}
+`
+
+export const GET_TODO = gql`
+query GetTodo($_id: ID!) {
+  getTodo(_id: $_id) {
+    title
+    todotask
+    completedOn
+    _id
+    userId
+  }
+}
+`

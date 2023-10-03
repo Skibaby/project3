@@ -19,6 +19,9 @@ const resolvers = {
     getTodos: async (_, args) => {
       return Todo.find({userId: args.userId});
     },
+    getTodo: async (_, args) => {
+      return Todo.find({_id: args._id});
+    },
   },
 
   Mutation: {
