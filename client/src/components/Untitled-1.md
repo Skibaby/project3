@@ -1,0 +1,1 @@
+mongodb+srv://root:root@cluster0.o9plqfz.mongodb.net/?retryWrites=true

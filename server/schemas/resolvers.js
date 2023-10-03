@@ -47,6 +47,17 @@ const resolvers = {
     addTodo: async (_, args) => {
       const todo = await Todo.create(args);
       return { todo };
+    },
+    updateTodo: async (_, args) => {
+      const todo = await Todo.findOneAndUpdate(
+        { _id: args._id }, 
+        {completedOn: args.completedOn}
+        );
+        return {todo};
+    },
+    deleteTodo: async (_, args) => {
+      const todo = await Todo.findByIdAndDelete(args._id)
+      return {todo}
     }
   }
 };

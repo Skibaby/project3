@@ -1,0 +1,69 @@
+query Getusers {
+  users {
+    email
+    username
+    _id
+  }
+}
+
+
+query Getuser($id: ID!) {
+  user(id: $id) {
+    email
+    username
+    _id
+  }
+}
+
+
+
+mutation AddUser($email:String!, $username:String!, $password:String!) {
+  addUser(email: $email, username: $username, password: $password) {
+    token
+    user {
+      username
+      email
+      password
+      _id
+    }
+  }
+}
+
+
+mutation AddTodo($title:String!, $todotask:String!, $userId:ID!) {
+  addTodo(title: $title, todotask: $todotask, userId: $userId) {
+    title
+    completedOn
+    userId
+    todotask
+    createdAt
+  }
+}
+
+query GetTodos($userId: ID!) {
+  getTodos(userId: $userId) {
+    title
+    todotask
+    completedOn
+    _id
+    userId
+  }
+}
+
+
+mutation DeleteTodo($_id: ID!) {
+  deleteTodo(_id: $_id) {
+    completedOn
+  }
+}
+
+
+query GetTodos($userId: ID!) {
+  getTodos(userId: $userId) {
+    title
+    todotask
+    completedOn
+    _id
+    userId
+  }
+}

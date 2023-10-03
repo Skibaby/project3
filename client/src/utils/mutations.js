@@ -23,3 +23,37 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const GET_USER = gql`
+    mutation AddUser($email:String!, $username:String!, $password:String!) {
+      addUser(email: $email, username: $username, password: $password) {
+        token
+        user {
+          username
+          email
+          password
+          _id
+        }
+      }
+}
+`;
+
+
+export const ADD_TODO = gql`
+  mutation AddTodo($title:String!, $todotask:String!, $userId:ID!) {
+    addTodo(title: $title, todotask: $todotask, userId: $userId) {
+      title
+      completedOn
+      userId
+      todotask
+      createdAt
+    }
+  }
+`;
+
+export const DELETE_TODO = gql`
+mutation DeleteTodo($_id: ID!) {
+  deleteTodo(_id: $_id) {
+    completedOn
+  }
+`

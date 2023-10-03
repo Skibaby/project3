@@ -9,7 +9,9 @@ const typeDefs = `#graphql
   type Todo {
     _id: ID
     title: String
+    todotask: String
     completedOn: Boolean
+    createdAt: String
     userId: ID
   }
 
@@ -22,13 +24,17 @@ const typeDefs = `#graphql
     users: [User]
     user(id: ID!): User
     me: User
-    getTodos(userId: ID!): Todo
+    getTodos(userId: ID!): [Todo]
   }
+
+  
 
   type Mutation {
     addUser(email:String!, username:String!, password:String!): Auth
     login(email:String!, password:String!): Auth
-    addTodo(title:String!, todoItem:String!, userId:ID!): Todo
+    addTodo(title:String!, todotask:String!, userId:ID!): Todo
+    updateTodo(_id:ID!, completedOn: Boolean): Todo
+    deleteTodo(_id:ID!): Todo
   }
 `;
 

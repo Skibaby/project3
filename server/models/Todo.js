@@ -7,7 +7,12 @@ const todoSchema = new mongoose.Schema({
     maxlength: 30,
     trim: true,
   },
- 
+  todotask: {
+    type: String,
+    required: true,
+    minlength: 3,
+    trim: true,
+  },
   completedOn: {
     type: Boolean,
     default: false,
