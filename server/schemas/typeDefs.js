@@ -9,9 +9,7 @@ const typeDefs = `#graphql
   type Todo {
     _id: ID
     title: String
-    todoItem: String
     completedOn: Boolean
-   
     userId: ID
   }
 
@@ -24,7 +22,7 @@ const typeDefs = `#graphql
     users: [User]
     user(id: ID!): User
     me: User
-    getTodos(id: ID!): Todo
+    getTodos(userId: ID!): Todo
   }
 
   type Mutation {

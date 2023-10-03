@@ -7,10 +7,7 @@ const todoSchema = new mongoose.Schema({
     maxlength: 30,
     trim: true,
   },
-  todoItem: {
-    type: String,
-    required: true,
-  },
+ 
   completedOn: {
     type: Boolean,
     default: false,
