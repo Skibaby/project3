@@ -9,7 +9,7 @@ function Navbar() {
   
   if (Auth.loggedIn()) {
     return (
-      <>
+      <nav className='grid'>
         <Link to="/">
           Home
         </Link>
@@ -19,7 +19,7 @@ function Navbar() {
         <button onClick={logout}>
           Logout
         </button>
-      </>
+      </nav>
     );
   }
   // If logged out show login controls

@@ -13,20 +13,16 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
-
-export const GET_USER = gql`
-    mutation AddUser($email:String!, $username:String!, $password:String!) {
-      addUser(email: $email, username: $username, password: $password) {
+    mutation addUser(
+      $email:String!, 
+      $username:String!, 
+      $password:String!
+    ) {
+      addUser(
+        email: $email, 
+        username: $username, 
+        password: $password
+      ) {
         token
         user {
           username
@@ -35,25 +31,30 @@ export const GET_USER = gql`
           _id
         }
       }
-}
+    }
 `;
 
 
 export const ADD_TODO = gql`
-  mutation AddTodo($title:String!, $todotask:String!, $userId:ID!) {
-    addTodo(title: $title, todotask: $todotask, userId: $userId) {
+  mutation addTodo(
+    $title:String!,
+    $userId:ID!
+  ) {
+    addTodo(
+      title: $title, 
+      userId: $userId
+    ) {
       title
-      completedOn
-      userId
-      todotask
+      complete
       createdAt
     }
   }
 `;
 
-export const DELETE_TODO = gql`
-mutation DeleteTodo($_id: ID!) {
-  deleteTodo(_id: $_id) {
-    completedOn
+export const UPDATE_TODO = gql`
+mutation updateTodo($todoId: ID!, $complete: Boolean) {
+  updateTodo(todoId: $todoId, complete: $complete) {
+    complete
   }
-`
+}
+`;

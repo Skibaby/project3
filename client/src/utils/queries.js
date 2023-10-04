@@ -6,6 +6,11 @@ export const QUERY_USERS = gql`
       _id
       username
       email
+      todos {
+        title
+        complete
+        _id
+      }
     }
   }
 `;
@@ -16,6 +21,11 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      todos {
+        title
+        complete
+        _id
+      }
     }
   }
 `;
@@ -26,30 +36,31 @@ export const QUERY_ME = gql`
       _id
       username
       email
+      todos {
+        title
+        complete
+        _id
+      }
     }
   }
 `;
 
 export const GET_TODOS = gql`
-query GetTodos($userId: ID!) {
+query getTodos($userId: ID!) {
   getTodos(userId: $userId) {
     title
-    todotask
-    completedOn
+    complete
     _id
-    userId
   }
 }
 `
 
 export const GET_TODO = gql`
-query GetTodo($_id: ID!) {
-  getTodo(_id: $_id) {
+query getTodo($todoId: ID!) {
+  getTodo(todoId: $todoId) {
     title
-    todotask
-    completedOn
+    complete
     _id
-    userId
   }
 }
 `

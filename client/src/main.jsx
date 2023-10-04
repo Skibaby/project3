@@ -2,11 +2,12 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
-import Error from './pages/Signup.jsx';
+import Error from './pages/Error.jsx';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup.jsx';
+import '@picocss/pico/css/pico.min.css';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,8 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      }, {
+      }, 
+      {
         path: '/login',
         element: <Login />
       },

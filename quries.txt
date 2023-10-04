@@ -33,7 +33,7 @@ mutation AddUser($email:String!, $username:String!, $password:String!) {
 mutation AddTodo($title:String!, $todotask:String!, $userId:ID!) {
   addTodo(title: $title, todotask: $todotask, userId: $userId) {
     title
-    completedOn
+    complete
     userId
     todotask
     createdAt
@@ -44,7 +44,7 @@ query GetTodos($userId: ID!) {
   getTodos(userId: $userId) {
     title
     todotask
-    completedOn
+    complete
     _id
     userId
   }
@@ -53,7 +53,7 @@ query GetTodos($userId: ID!) {
 
 mutation DeleteTodo($_id: ID!) {
   deleteTodo(_id: $_id) {
-    completedOn
+    complete
   }
 }
 
@@ -62,7 +62,7 @@ query GetTodos($userId: ID!) {
   getTodos(userId: $userId) {
     title
     todotask
-    completedOn
+    complete
     _id
     userId
   }
@@ -72,7 +72,7 @@ query GetTodo($_id: ID!) {
   getTodo(_id: $_id) {
     title
     todotask
-    completedOn
+    complete
     _id
     userId
   }
